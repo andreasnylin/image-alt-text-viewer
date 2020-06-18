@@ -109,7 +109,11 @@
 					color = '#f44';
 				}
 				else {
-					if (title.textContent && title.textContent.trim().length === 0) {
+					if (!title) {
+						text = 'SVG Missing title';
+						color = missingColor;
+					}
+					else if (title.textContent && title.textContent.trim().length === 0) {
 						text = 'Empty title. ';
 						color = emptyColor;
 					}
@@ -118,7 +122,11 @@
 						color = existColor;
 					}
 
-					if (descr.textContent && descr.textContent.trim().length === 0) {
+					if (!descr) {
+						text += 'SVG Missing descr';
+						color = missingColor;
+					}
+					else if (descr.textContent && descr.textContent.trim().length === 0) {
 						text += 'Empty descr.';
 						color = emptyColor;
 					}
